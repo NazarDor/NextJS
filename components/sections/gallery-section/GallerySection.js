@@ -4,11 +4,6 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 export default function GallerySection() {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
   const containerVariants = {
     visible: {
       transition: {
@@ -19,7 +14,7 @@ export default function GallerySection() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
@@ -47,9 +42,9 @@ export default function GallerySection() {
   return (
     <motion.div
       className={styles.gallery_section}
-      ref={ref}
       initial="hidden"
-      animate={inView ? "visible" : "hidden"}
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.3 }}
       variants={containerVariants}
     >
       <motion.div className={styles.gallery_container}>
@@ -143,7 +138,7 @@ export default function GallerySection() {
           className={styles.industries}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.4 }}
           variants={slideInLeft}
         >
           <div className={styles.industries_title}>Industries we work with</div>
@@ -158,7 +153,7 @@ export default function GallerySection() {
           className={styles.quote}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.4 }}
           variants={slideInRight}
         >
           <div>

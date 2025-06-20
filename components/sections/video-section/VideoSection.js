@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import styles from "./VideoSection.module.css";
 import { motion, AnimatePresence } from "framer-motion";
-import cn from 'classnames';
+import cn from "classnames";
 
 export default function VideoPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -33,7 +33,6 @@ export default function VideoPlayer() {
         loop
         playsInline
       />
-
       <div className={styles.video_container}>
         <div className={styles.video_info}>
           <motion.div
@@ -41,7 +40,7 @@ export default function VideoPlayer() {
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.4 }}
           >
             <div className={styles.video_title}>A FUTURE-FOCUSED</div>
             <div className={styles.video_desc}>

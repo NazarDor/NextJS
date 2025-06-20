@@ -54,9 +54,11 @@ export default function Home() {
 
       <motion.div
         className={styles.hero_info}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        variants={fadeIn}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.4 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.6 }}
       >
         <div className={styles.hero_text}>
           <b>branding, design, dev</b> for luxury brands
@@ -68,10 +70,10 @@ export default function Home() {
               <motion.div
                 key={index}
                 className={styles.hero_item}
-                custom={index}
-                initial="hidden"
-                animate={inView ? "visible" : "hidden"}
-                variants={itemVariants}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.4 }}
+                transition={{ delay: 0.2 + index * 0.2, duration: 0.6 }}
               >
                 {text}
               </motion.div>

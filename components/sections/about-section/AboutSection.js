@@ -12,7 +12,7 @@ export default function Home() {
         initial={{ x: 100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
-        viewport={{ once: true }}
+        viewport={{ once: false, amount: 0.4 }}
       >
         <Image
           src="/AboutSection.png"
@@ -28,7 +28,7 @@ export default function Home() {
         initial={{ x: 0, opacity: 0 }}
         whileInView={{ x: 100, opacity: 1 }}
         transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }}
-        viewport={{ once: true }}
+        viewport={{ once: false, amount: 0.4 }}
       >
         <div className={styles.about_title}>WE CRAFT WAYS TO</div>
         <div className={styles.about_desc}>

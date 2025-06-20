@@ -27,7 +27,6 @@ export default function Home() {
     const newIndex =
       swiper.realIndex ?? swiper.activeIndex % videoSources.length;
 
-    // Останавливаем все видео
     videoRefs.current.forEach((vid) => {
       if (vid) {
         vid.pause();
@@ -85,14 +84,23 @@ export default function Home() {
       <motion.div
         ref={ref}
         className={styles.phone_info}
-        initial={{ opacity: 0, x: 100, y: -100 }}
-        animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
-        transition={{ duration: 1, ease: "easeOut" }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.3 }}
+        variants={{
+          hidden: { opacity: 0, x: 100, y: -100 },
+          visible: {
+            opacity: 1,
+            x: 0,
+            y: 0,
+            transition: { duration: 1, ease: "easeOut" },
+          },
+        }}
       >
         <div className={styles.phone_text}>
           <AnimatePresence mode="wait">
             <motion.div
-              key={activeIndex} // ключ для анимации при смене
+              key={activeIndex}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
@@ -115,7 +123,7 @@ export default function Home() {
               effect="coverflow"
               grabCursor={false}
               centeredSlides={true}
-              slidesPerView={1} // можно заменить на 1.2
+              slidesPerView={1}
               spaceBetween={30}
               loop={true}
               loopedSlides={videoSources.length}
@@ -136,10 +144,7 @@ export default function Home() {
               allowTouchMove={false}
             >
               {videoSources.map((src, index) => (
-                <SwiperSlide
-                  className={styles.slide}
-                  key={`slide-${index}`} // ключ должен быть уникален
-                >
+                <SwiperSlide className={styles.slide} key={`slide-${index}`}>
                   {({ isVisible, isActive }) => (
                     <div
                       className={`${styles.video_wrapper} ${
