@@ -1,7 +1,6 @@
 import Image from "next/image";
 import styles from "./GallerySection.module.css";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 export default function GallerySection() {
   const containerVariants = {
@@ -75,7 +74,6 @@ export default function GallerySection() {
             height={222}
           />
         </motion.div>
-
         <motion.div className={styles.imgWrapper_4} variants={itemVariants}>
           <video
             className={styles.video}
@@ -95,7 +93,6 @@ export default function GallerySection() {
             height={160}
           />
         </motion.div>
-
         <motion.div className={styles.imgWrapper_6} variants={itemVariants}>
           <Image
             src="/gallery/Photo6.png"
@@ -105,7 +102,6 @@ export default function GallerySection() {
             height={222}
           />
         </motion.div>
-
         <motion.div className={styles.imgWrapper_7} variants={itemVariants}>
           <Image
             src="/gallery/Photo7.png"
@@ -133,7 +129,6 @@ export default function GallerySection() {
             height={153}
           />
         </motion.div>
-
         <motion.div
           className={styles.industries}
           initial="hidden"
@@ -148,7 +143,6 @@ export default function GallerySection() {
             <li>DESIGN & ARCHITECTURE</li>
           </ul>
         </motion.div>
-
         <motion.div
           className={styles.quote}
           initial="hidden"

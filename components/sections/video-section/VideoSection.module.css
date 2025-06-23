@@ -191,3 +191,67 @@
     opacity: 0.92;
     margin-top: 8px;
 }
+
+@media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
+
+        .backgroundVideo,
+        .iphoneVideo,
+        .placeholder {
+            -webkit-object-fit: cover;
+            object-fit: cover;
+        }
+
+        .video_info {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .video_text {
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .imgWrapper {
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+        }
+
+        .image {
+            background: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
+        }
+
+        .thalassa_actions {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .thalassa_btn {
+            -webkit-transition: background 0.2s;
+            transition: background 0.2s;
+        }
+
+        .thalassa_calendar {
+            -webkit-transition: background 0.2s, border-color 0.2s;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+    }
+}

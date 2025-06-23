@@ -139,7 +139,6 @@ export default function Home() {
               watchSlidesProgress={true}
               onSwiper={(swiper) => (swiperRef.current = swiper)}
               onSlideChange={handleSlideChange}
-              className={styles.swiper}
               watchSlidesVisibility={true}
               allowTouchMove={false}
             >
