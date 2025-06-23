@@ -8,7 +8,7 @@ import { useInView } from "react-intersection-observer";
 export default function Home() {
   const { ref, inView } = useInView({ triggerOnce: true });
 
-  const MotionImage = motion(Image);
+  const MotionImage = motion.create(Image);
 
   return (
     <div className={styles.hero_container} ref={ref}>

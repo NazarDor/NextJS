@@ -1,18 +1,23 @@
 @import "tailwindcss";
 
+/* Надёжная поддержка шрифтов — добавляем несколько форматов */
 @font-face {
   font-family: 'Bai Jamjuree';
-  src: url('/fonts/BaiJamjuree-Regular.woff') format('woff');
+  src:
+    url('/fonts/BaiJamjuree-Regular.woff2') format('woff2'),
+    url('/fonts/BaiJamjuree-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
+/* Поддержка цветовой схемы */
 :root {
   --background: #ffffff;
   --foreground: #000000;
 }
 
+/* Safari иногда глючит с prefers-color-scheme — лучше дублировать через body[data-theme] */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #000000;
@@ -20,8 +25,18 @@
   }
 }
 
+/* Альтернатива для Safari — fallback */
+body[data-theme='dark'] {
+  --background: #000000;
+  --foreground: #ededed;
+}
+
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: 'PP Neue Montreal', sans-serif;
+  font-family: 'PP Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  /* сглаживание текста в Safari */
+  -moz-osx-font-smoothing: grayscale;
 }
