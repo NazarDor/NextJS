@@ -54,6 +54,8 @@ export default function GallerySection() {
             className={styles.img}
             width={270}
             height={160}
+            priority
+            style={{ width: "270px", height: "160px", objectFit: "cover" }}
           />
         </motion.div>
         <motion.div className={styles.imgWrapper_2} variants={itemVariants}>
@@ -63,6 +65,8 @@ export default function GallerySection() {
             className={styles.img}
             width={364}
             height={612}
+            priority
+            style={{ width: "364px", height: "612px", objectFit: "cover" }}
           />
         </motion.div>
         <motion.div className={styles.imgWrapper_3} variants={itemVariants}>
@@ -72,6 +76,8 @@ export default function GallerySection() {
             className={styles.img}
             width={364}
             height={222}
+            priority
+            style={{ width: "364px", height: "222px", objectFit: "cover" }}
           />
         </motion.div>
         <motion.div className={styles.imgWrapper_4} variants={itemVariants}>
@@ -91,6 +97,8 @@ export default function GallerySection() {
             className={styles.img}
             width={200}
             height={160}
+            priority
+            style={{ width: "200px", height: "160px", objectFit: "cover" }}
           />
         </motion.div>
         <motion.div className={styles.imgWrapper_6} variants={itemVariants}>
@@ -100,6 +108,8 @@ export default function GallerySection() {
             className={styles.img}
             width={364}
             height={222}
+            priority
+            style={{ width: "364px", height: "222px", objectFit: "cover" }}
           />
         </motion.div>
         <motion.div className={styles.imgWrapper_7} variants={itemVariants}>
@@ -109,6 +119,8 @@ export default function GallerySection() {
             className={styles.img}
             width={87}
             height={185}
+            priority
+            style={{ width: "87px", height: "185px", objectFit: "cover" }}
           />
         </motion.div>
         <motion.div className={styles.imgWrapper_8} variants={itemVariants}>
@@ -118,6 +130,8 @@ export default function GallerySection() {
             className={styles.img}
             width={205}
             height={306}
+            priority
+            style={{ width: "205px", height: "306px", objectFit: "cover" }}
           />
         </motion.div>
         <motion.div className={styles.imgWrapper_9} variants={itemVariants}>
@@ -127,6 +141,8 @@ export default function GallerySection() {
             className={styles.img}
             width={230}
             height={153}
+            priority
+            style={{ width: "230px", height: "153px", objectFit: "cover" }}
           />
         </motion.div>
         <motion.div

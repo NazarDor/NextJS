@@ -176,12 +176,16 @@
 .imgWrapper_9 {
     overflow: hidden;
     transition: transform 0.3s ease;
+    width: fit-content;
+    height: fit-content;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .img {
     display: block;
-    width: 100%;
-    height: auto;
+    width: 100% !important;
+    height: auto !important;
     transition: transform 0.3s ease;
 }
 

@@ -13,19 +13,20 @@ export default function Home() {
   return (
     <div className={styles.hero_container} ref={ref}>
       <div className={styles.imgWrapper}>
-        <MotionImage
-          src="/HeroSection.svg"
-          alt="HeroSection logo"
-          className={styles.img}
-          style={{ objectFit: "cover" }}
-          width={1920}
-          height={880}
+        <motion.div
           initial={{ opacity: 0, scale: 1.05 }}
-          animate={
-            inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 1.05 }
-          }
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
-        />
+          className={styles.img}
+        >
+          <img
+            src="/HeroSection.svg"
+            alt="HeroSection logo"
+            width={1920}
+            height={880}
+            style={{ objectFit: "cover" }}
+          />
+        </motion.div>
       </div>
 
       <motion.div
